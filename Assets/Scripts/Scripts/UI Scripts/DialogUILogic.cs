@@ -29,7 +29,7 @@ public class DialogUILogic : MonoBehaviour
         DialogUIPopUp popUp = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogUIPopUp>();
         popUp.PopUp(popUpText);
         
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         popUp.ClosePopUp(popUpText);
 

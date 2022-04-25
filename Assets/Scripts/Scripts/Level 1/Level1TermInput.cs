@@ -23,7 +23,7 @@ public class Level1TermInput : MonoBehaviour
         terminal.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        
+        inputField.text = "loop(4){ }";
     }
     void Update() {
         // SetLineNumbers();
