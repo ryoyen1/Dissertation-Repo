@@ -15,7 +15,6 @@ public class ElevatorInput : MonoBehaviour
     public GameObject code;
     public InputField inputField;
     public string codeUI;
-    public TMPro.TMP_Text lineNumbersUI;
     public bool atLevel1;
     public bool goingLevel2;
     public bool goingLevel3;
@@ -34,7 +33,7 @@ public class ElevatorInput : MonoBehaviour
         
     }
     void Update() {
-        SetLineNumbers();
+       
         if (Input.GetKeyDown (KeyCode.C) && (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.LeftCommand)))
         {
             RemoveSpace();
@@ -101,16 +100,5 @@ public class ElevatorInput : MonoBehaviour
                 }
             }
         Debug.Log("CodeUI : " + codeUI);
-    }
-
-    void SetLineNumbers () {
-        string numbers = "";
-
-        int numLines = codeUI.Split ('\n').Length;
-        for (int i = 0; i < numLines; i++) {
-            numbers += (i + 1) + "\n";
-        }
-
-        lineNumbersUI.text = numbers;
     }
 }

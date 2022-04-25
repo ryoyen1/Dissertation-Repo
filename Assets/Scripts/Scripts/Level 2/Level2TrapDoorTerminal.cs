@@ -17,7 +17,7 @@ public class Level2TrapDoorTerminal : MonoBehaviour
     public GameObject transparentObj;
     public InputField inputField;
     public string codeUI;
-    public TMPro.TMP_Text lineNumbersUI;
+    
     public bool isFound = false;
     // public 
     void Start() {
@@ -33,7 +33,7 @@ public class Level2TrapDoorTerminal : MonoBehaviour
        
     }
     void Update() {
-        SetLineNumbers();
+        
         if (Input.GetKeyDown (KeyCode.C) && (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.LeftCommand)))
         {
             RemoveSpace();
@@ -83,14 +83,5 @@ public class Level2TrapDoorTerminal : MonoBehaviour
             Debug.Log("CodeUI : " + codeUI);
     }
 
-    void SetLineNumbers () {
-        string numbers = "";
-
-        int numLines = codeUI.Split ('\n').Length;
-        for (int i = 0; i < numLines; i++) {
-            numbers += (i + 1) + "\n";
-        }
-
-        lineNumbersUI.text = numbers;
-    }
+    
 }

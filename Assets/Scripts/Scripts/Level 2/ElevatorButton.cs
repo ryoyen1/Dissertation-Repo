@@ -32,7 +32,7 @@ public class ElevatorButton : Interact
             elevatorInput.goingLevel3 = false;
             
         }
-       
+        
         if(elevatorInput.goingLevel3 && elevatorInput.atLevel1)
         {
             elevatorScript.GotoLevel3();

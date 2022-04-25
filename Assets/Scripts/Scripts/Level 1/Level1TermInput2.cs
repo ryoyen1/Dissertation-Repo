@@ -14,7 +14,7 @@ public class Level1TermInput2 : MonoBehaviour
     public GameObject code;
     public InputField inputField;
     public string codeUI;
-    public TMPro.TMP_Text lineNumbersUI;
+    // public TMPro.TMP_Text lineNumbersUI;
     public bool isFound;
     // public 
     void Start() {
@@ -28,7 +28,7 @@ public class Level1TermInput2 : MonoBehaviour
        
     }
     void Update() {
-        SetLineNumbers();
+        // SetLineNumbers();
         if (Input.GetKeyDown (KeyCode.C) && (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.LeftCommand)))
         {
             RemoveSpace();
@@ -97,15 +97,6 @@ public class Level1TermInput2 : MonoBehaviour
         
     }
 
-    void SetLineNumbers () {
-        string numbers = "";
-
-        int numLines = codeUI.Split ('\n').Length;
-        for (int i = 0; i < numLines; i++) {
-            numbers += (i + 1) + "\n";
-        }
-
-        lineNumbersUI.text = numbers;
-    }
+    
 }
 

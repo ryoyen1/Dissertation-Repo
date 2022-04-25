@@ -13,7 +13,7 @@ public class Level3TermInput3 : MonoBehaviour
     public GameObject transparentObj;
     public InputField inputField;
     public string codeUI;
-    public TMPro.TMP_Text lineNumbersUI;
+    
     public bool isFound = false;
     [SerializeField] public float x = 0f;
     [SerializeField] public float y = 0f;
@@ -30,7 +30,7 @@ public class Level3TermInput3 : MonoBehaviour
         Cursor.visible = true;
     }
     void Update() {
-        SetLineNumbers();
+       
         if (Input.GetKeyDown (KeyCode.C) && (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.LeftCommand)))
         {
             RemoveSpace();
@@ -94,16 +94,5 @@ public class Level3TermInput3 : MonoBehaviour
                     Debug.Log("congrats it works");
                 }
             }
-    }
-
-    void SetLineNumbers () {
-        string numbers = "";
-
-        int numLines = codeUI.Split ('\n').Length;
-        for (int i = 0; i < numLines; i++) {
-            numbers += (i + 1) + "\n";
-        }
-
-        lineNumbersUI.text = numbers;
     }
 }
