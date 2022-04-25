@@ -1,4 +1,5 @@
-# Dissertation-Repo
+# Dissertation project
+
 # How to run
 
 Using the Unity editor, the game can be run by simply pressing the play button. 
