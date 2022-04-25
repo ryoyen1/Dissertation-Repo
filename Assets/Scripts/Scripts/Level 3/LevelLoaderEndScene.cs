@@ -20,7 +20,7 @@ public class LevelLoaderEndScene : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            // movePlatform.GetComponent<Animator>().Play("NextLevelPlatform");
+            
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             LoadNextLevel();
         }

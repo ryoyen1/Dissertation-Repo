@@ -7,7 +7,6 @@ public class KeyCard : Interact
 {
     public bool hasRedKey;
     private bool RedKeyObject = true;
-    // public TextMeshProUGUI interactionText;
     public int KeyCardCount;
     public GameObject UI;
     public GameObject RedKey;
@@ -21,7 +20,6 @@ public class KeyCard : Interact
     }
     public override void OnInteract() {
         hasRedKey = true;
-        // KPS.canOpen = true;
         if (hasRedKey == true)
         {
             KeyCardCount += 1;

@@ -36,9 +36,10 @@ public class Level3TermInputLast : MonoBehaviour
             RemoveSpace();
             DO();
             firstPerson.CanMove = true;
-            // GetCodeText();
-            // Debug.Log(codeUI);
+            
             terminal.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else if (Input.GetKeyDown (KeyCode.R))
         {
@@ -58,7 +59,7 @@ public class Level3TermInputLast : MonoBehaviour
     {
             codeUI = code.GetComponent<Text>().text;
             string textAsset = asset.text;
-            // string newtext = textAsset.Replace("\n","");
+            
             string[] textLines = textAsset.Split(',');
             string[] textLinesTest = {"whatsup", "hello"};
             for (int i = 0; i < textLines.Length; i++ ) 
@@ -66,14 +67,13 @@ public class Level3TermInputLast : MonoBehaviour
                 Debug.Log(textLines[i]);
                 if(codeUI == textLines[i])
                 {
-                    // transparentObj.SetActive(false);
+                    
                     print("WORKSSS");
                     Debug.Log("congrats it works");
                     for(int j = 1; j <= 4+1; j++)
                     {
                         Debug.Log(i);
-                        // for (int k = 1; k <= j;k++)
-                        // {
+                        
                             Instantiate(floor,new Vector3(x,y,z), Quaternion.Euler(-90,0,0));
                             Instantiate(floor,new Vector3(x+1.5f,y,z), Quaternion.Euler(-90,0,0));
                             Instantiate(floor,new Vector3(x+3f,y,z), Quaternion.Euler(-90,0,0));
@@ -81,17 +81,16 @@ public class Level3TermInputLast : MonoBehaviour
                             x += addX;
                             y += addY;
                             z += addZ;
-                        // }
+                        
                         Debug.Log("Z axis : " + z);
                     }
-                    // break;
+                   
                 }
 
             }
-            // Debug.Log("SOLUTION : " + textLines[2]);
-            // Debug.Log(codeUI + " == " + textLines[2]);
+            
             Debug.Log("CodeUI : " + codeUI);
-        // Debug.Log("Text : " + text);
+       
             for (int i = 0; i < textLinesTest.Length; i++ ) 
             {
                 if(codeUI == textLinesTest[i])

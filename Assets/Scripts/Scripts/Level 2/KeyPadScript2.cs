@@ -18,9 +18,7 @@ public class KeyPadScript2 : Interact
         animator = GetComponent<Animator>();
         keycard = GameObject.Find("RedKey").GetComponent<KeyCard>();
         slidingDoor = GameObject.Find("LP_Bay_Door_snaps").GetComponent<SlidingDoor>();
-        // slidingDoor2 = GameObject.Find("LP_Bay_Door_snaps(2)").GetComponent<SlidingDoor2>();
-        // popUp = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogUIPopUp>();
-        // dialogUILogic = GameObject.FindGameObjectWithTag("KeyPad").GetComponent<DialogUIPopUp>();
+       
     }
     public override void OnFocus()
     {
@@ -36,9 +34,7 @@ public class KeyPadScript2 : Interact
             Debug.Log("Red Key Count : " + keycard.KeyCardCount);
             if(canOpen && isInteractable)
             {
-                // isOpen = !isOpen;
-                // Debug.Log("Opening bool : " + isOpen);
-                // slidingDoor.OpenDoor();
+               
                 
             }
             if(keycard.KeyCardCount == 2)
@@ -52,7 +48,7 @@ public class KeyPadScript2 : Interact
         }
         else
         {
-            // StartCoroutine(UITimeout());
+           
             print("dont have key");
         }
     }

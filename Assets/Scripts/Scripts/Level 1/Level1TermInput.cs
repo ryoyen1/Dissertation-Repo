@@ -6,6 +6,7 @@ using TMPro;
 public class Level1TermInput : MonoBehaviour
 {
     FirstPerson firstPerson;
+    public string popUpText;
     public GameObject terminal;
     public GameObject floor;
     public TextAsset asset;
@@ -17,11 +18,12 @@ public class Level1TermInput : MonoBehaviour
     // public 
     void Start() {
         firstPerson = GameObject.Find("Player").GetComponent<FirstPerson>();
+        UIPopUp popUp = GameObject.FindGameObjectWithTag("Player").GetComponent<UIPopUp>();
         firstPerson.CanMove = false;
         terminal.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        // terminal.SetActive(false);
+        
     }
     void Update() {
         SetLineNumbers();
@@ -30,40 +32,30 @@ public class Level1TermInput : MonoBehaviour
             RemoveSpace();
             DO();
             firstPerson.CanMove = true;
-            // GetCodeText();
-            // Debug.Log(codeUI);
+            
             terminal.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else if (Input.GetKeyDown (KeyCode.R))
         {
             Restart();
         }
     }
-
-    // public void GetCodeText()
-    // {
-    //     codeUI = code.GetComponent<Text>().text;
-    //     inputField.onValueChanged.AddListener(delegate {RemoveSpace();});
-    //     // Debug.Log("INPUT FIELD : " + inputField);
-
-    // }
     void Restart()
     {
 
     }
     void RemoveSpace()
     {
-        // inputField.text = inputField.text.Replace("", "");
-        // codeUI = codeUI.Replace("\n", "").Replace("\r","");
         codeUI = codeUI.Replace("\n", "");
-        // asset.text = asset.text.Replace("\n\n","");
         inputField.text = inputField.text.Replace("\n", "").Replace("\r","");
     }
     void DO()
     {
             codeUI = code.GetComponent<Text>().text;
             string textAsset = asset.text;
-            // string newtext = textAsset.Replace("\n","");
+            
             string[] textLines = textAsset.Split(',');
             string[] textLinesTest = {"whatsup", "hello"};
             float z = 1f;
@@ -83,20 +75,23 @@ public class Level1TermInput : MonoBehaviour
                     }
                     // break;
                 }
+                else
+                {
+                    StartCoroutine(UITimeout());
+                }
 
             }
-            // Debug.Log("SOLUTION : " + textLines[2]);
-            // Debug.Log(codeUI + " == " + textLines[2]);
             Debug.Log("CodeUI : " + codeUI);
-        // Debug.Log("Text : " + text);
-            for (int i = 0; i < textLinesTest.Length; i++ ) 
-            {
-                if(codeUI == textLinesTest[i])
-                {
-                    print("WORKSSS for test");
-                    Debug.Log("congrats it works");
-                }
-            }
+    }
+    private IEnumerator UITimeout()
+    {
+        UIPopUp popUp = GameObject.FindGameObjectWithTag("Player").GetComponent<UIPopUp>();
+        popUp.PopUp(popUpText);
+        
+        yield return new WaitForSeconds(2);
+
+        popUp.ClosePopUp(popUpText);
+
     }
 
     void SetLineNumbers () {

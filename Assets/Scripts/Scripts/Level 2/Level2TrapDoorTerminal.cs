@@ -30,7 +30,7 @@ public class Level2TrapDoorTerminal : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         inputField.text = "if(greenlight && redlight && yellowlight)";
-        // terminal.SetActive(false);
+       
     }
     void Update() {
         SetLineNumbers();
@@ -39,8 +39,7 @@ public class Level2TrapDoorTerminal : MonoBehaviour
             RemoveSpace();
             DO();
             firstPerson.CanMove = true;
-            // GetCodeText();
-            // Debug.Log(codeUI);
+            
             terminal.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -63,7 +62,7 @@ public class Level2TrapDoorTerminal : MonoBehaviour
     {
             codeUI = code.GetComponent<Text>().text;
             string textAsset = asset.text;
-            // string newtext = textAsset.Replace("\n","");
+            
             string[] textLines = textAsset.Split(',');
             string[] textLinesTest = {"test1", "test2"};
             float x = -12.25f;

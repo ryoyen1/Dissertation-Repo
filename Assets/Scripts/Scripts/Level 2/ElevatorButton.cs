@@ -30,15 +30,9 @@ public class ElevatorButton : Interact
             elevatorScript.GotoLevel2();
             Debug.Log("Level 2 : " + elevatorInput.goingLevel2);
             elevatorInput.goingLevel3 = false;
-            // elevatorInput.atLevel1 = false;
+            
         }
-        // else if(elevatorInput.goingLevel2 && !elevatorInput.atLevel1)
-        // {
-        //     elevatorScript.GotoLevel2();
-        //     Debug.Log("Level 2 : " + elevatorInput.goingLevel2);
-        //     // elevatorInput.goingLevel2 = false;
-        //     elevatorInput.atLevel1 = true;
-        // }
+       
         if(elevatorInput.goingLevel3 && elevatorInput.atLevel1)
         {
             elevatorScript.GotoLevel3();

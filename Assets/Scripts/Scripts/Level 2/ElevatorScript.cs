@@ -8,10 +8,10 @@ public class ElevatorScript : MonoBehaviour
     public bool IsAtLevel2 = false;
     public bool IsAtLevel3 = false;
     private Animator animator;
-    // ElevatorInput elevatorInput;
+    
     void Start()
     {
-        // elevatorInput = GameObject.Find("Elevator Console").GetComponent<ElevatorInput>();
+        
         animator = GetComponent<Animator>();
     }
 

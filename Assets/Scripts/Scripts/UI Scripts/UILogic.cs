@@ -24,7 +24,7 @@ public class UILogic : MonoBehaviour
         }
     }
 
-    IEnumerator UITimeout()
+    private IEnumerator UITimeout()
     {
         UIPopUp popUp = GameObject.FindGameObjectWithTag("Player").GetComponent<UIPopUp>();
         popUp.PopUp(popUpText);

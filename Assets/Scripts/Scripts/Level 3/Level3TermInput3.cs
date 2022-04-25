@@ -36,9 +36,10 @@ public class Level3TermInput3 : MonoBehaviour
             RemoveSpace();
             DO();
             firstPerson.CanMove = true;
-            // GetCodeText();
-            // Debug.Log(codeUI);
+            
             terminal.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else if (Input.GetKeyDown (KeyCode.R))
         {
@@ -58,7 +59,7 @@ public class Level3TermInput3 : MonoBehaviour
     {
             codeUI = code.GetComponent<Text>().text;
             string textAsset = asset.text;
-            // string newtext = textAsset.Replace("\n","");
+          
             string[] textLines = textAsset.Split(',');
             string[] textLinesTest = {"whatsup", "hello"};
             for (int i = 0; i < textLines.Length; i++ ) 
@@ -66,7 +67,7 @@ public class Level3TermInput3 : MonoBehaviour
                 Debug.Log(textLines[i]);
                 if(codeUI == textLines[i])
                 {
-                    // transparentObj.SetActive(false);
+                 
                     print("WORKSSS");
                     Debug.Log("congrats it works");
                     for(int j = 0; j < i+1; j++)
@@ -78,14 +79,13 @@ public class Level3TermInput3 : MonoBehaviour
                         z += addZ;
                         Debug.Log("Z axis : " + z);
                     }
-                    // break;
+                   
                 }
 
             }
-            // Debug.Log("SOLUTION : " + textLines[2]);
-            // Debug.Log(codeUI + " == " + textLines[2]);
+          
             Debug.Log("CodeUI : " + codeUI);
-        // Debug.Log("Text : " + text);
+        
             for (int i = 0; i < textLinesTest.Length; i++ ) 
             {
                 if(codeUI == textLinesTest[i])

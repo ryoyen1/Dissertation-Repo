@@ -7593,7 +7593,7 @@ MonoBehaviour:
   Interaction: 1
   sprintkey: 304
   jumpkey: 32
-  crouchkey: 99
+  crouchkey: 308
   interactkey: 101
   walkingSpeed: 3
   runningSpeed: 8
@@ -8717,13 +8717,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c87cc49d8db0c4898e6349ca731bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpText: 
   terminal: {fileID: 1845999574}
   floor: {fileID: 6170290958968650113, guid: f900c3e9629b5764cab81bffcef630f1, type: 3}
   asset: {fileID: 4900000, guid: 4648deca37a5689418279a319340df1e, type: 3}
   code: {fileID: 355277073}
   inputField: {fileID: 389775350}
   codeUI: 
-  lineNumbersUI: {fileID: 1900781232}
+  lineNumbersUI: {fileID: 0}
   isFound: 0
 --- !u!114 &541039352
 MonoBehaviour:
@@ -14892,7 +14893,6 @@ GameObject:
   - component: {fileID: 852415175}
   - component: {fileID: 852415174}
   - component: {fileID: 852415173}
-  - component: {fileID: 852415172}
   - component: {fileID: 852415171}
   m_Layer: 5
   m_Name: Terminal
@@ -14935,33 +14935,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41029f6928b7c2b4b82b90b4c1f12ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpText: 
   terminal: {fileID: 651371047}
   floor: {fileID: 6170290958968650113, guid: f900c3e9629b5764cab81bffcef630f1, type: 3}
   asset: {fileID: 4900000, guid: 4648deca37a5689418279a319340df1e, type: 3}
   code: {fileID: 682785071}
   inputField: {fileID: 117736892}
   codeUI: 
-  lineNumbersUI: {fileID: 1385201076}
-  isFound: 0
---- !u!114 &852415172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852415169}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c87cc49d8db0c4898e6349ca731bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  terminal: {fileID: 651371047}
-  floor: {fileID: 6170290958968650113, guid: f900c3e9629b5764cab81bffcef630f1, type: 3}
-  asset: {fileID: 4900000, guid: 4648deca37a5689418279a319340df1e, type: 3}
-  code: {fileID: 682785071}
-  inputField: {fileID: 117736892}
-  codeUI: 
-  lineNumbersUI: {fileID: 1385201076}
+  lineNumbersUI: {fileID: 0}
   isFound: 0
 --- !u!114 &852415173
 MonoBehaviour:
@@ -21628,7 +21609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250479120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09999943, y: -0.38999987, z: 0.6400072}
+  m_LocalPosition: {x: -0.09999943, y: -0.13999987, z: 0.8900072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 963194228}
@@ -28073,7 +28054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1647226348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33108,7 +33089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453c8acea40b603419e3d7914a182aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpText: Press C to crouch
+  popUpText: Press Alt to crouch
 --- !u!65 &1928754249
 BoxCollider:
   m_ObjectHideFlags: 0

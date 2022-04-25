@@ -954,7 +954,7 @@ MonoBehaviour:
   code: {fileID: 1046020263}
   inputField: {fileID: 392023786}
   codeUI: 
-  lineNumbersUI: {fileID: 966840141}
+  lineNumbersUI: {fileID: 0}
   atLevel1: 0
   goingLevel2: 0
   goingLevel3: 0
@@ -3075,7 +3075,7 @@ MonoBehaviour:
   transparentObj: {fileID: 0}
   inputField: {fileID: 1323555071}
   codeUI: 
-  lineNumbersUI: {fileID: 1888208651}
+  lineNumbersUI: {fileID: 0}
   isFound: 0
 --- !u!114 &157208086
 MonoBehaviour:
@@ -16830,8 +16830,8 @@ MonoBehaviour:
   Interaction: 1
   sprintkey: 304
   jumpkey: 32
-  crouchkey: 99
-  interactkey: 323
+  crouchkey: 308
+  interactkey: 101
   walkingSpeed: 3
   runningSpeed: 8
   crouchSpeed: 1.5
@@ -33018,7 +33018,7 @@ MonoBehaviour:
   transparentObj: {fileID: 0}
   inputField: {fileID: 2092015099}
   codeUI: 
-  lineNumbersUI: {fileID: 840816624}
+  lineNumbersUI: {fileID: 0}
   isFound: 0
 --- !u!114 &1347673117
 MonoBehaviour:
@@ -45834,7 +45834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1975349246
 MonoBehaviour:
   m_ObjectHideFlags: 0

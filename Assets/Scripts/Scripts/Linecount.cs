@@ -8,17 +8,7 @@ public class Linecount : MonoBehaviour
     public TMPro.TMP_Text lineNumbersUI;
     public Text code;
     
-    // public void SetLineNumbers () {
-    //     // string codetext = code.text.ToString();
-    //     string numbers = "";
-
-    //     int numLines = code.Split('\n').Length;
-    //     for (int i = 0; i < numLines; i++) {
-    //         numbers += (i + 1) + "\n";
-    //     }
-
-    //     lineNumbersUI.text = numbers;
-    // }
+    
     public void LineNum()
     {
         // code = GetComponent<Text>();

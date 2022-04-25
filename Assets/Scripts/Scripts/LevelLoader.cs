@@ -11,16 +11,13 @@ public class LevelLoader : MonoBehaviour
 
     void Update()
     {
-        // if(Input.GetMouseButtonDown(1))
-        // {
-        //     LoadNextLevel();
-        // }
+        
     }
     void OnTriggerEnter(Collider other) 
     {
         if(other.tag == "Player")
         {
-            // movePlatform.GetComponent<Animator>().Play("NextLevelPlatform");
+            
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             LoadNextLevel();
         }

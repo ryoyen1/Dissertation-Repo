@@ -20,7 +20,7 @@ public class KeypadScriptLevel3 : Interact
         animator = GetComponent<Animator>();
         keycard = GameObject.Find("RedKey").GetComponent<KeyCard>();
         slidingDoor = GameObject.Find("LP_Bay_Door_snaps1").GetComponent<SlidingDoor>();
-        // slidingDoor2 = GameObject.Find("LP_Bay_Door_snaps(2)").GetComponent<SlidingDoor2>();
+        
         greenMaterial.DisableKeyword ("_EMISSION");
         redMaterial.DisableKeyword ("_EMISSION");
     }
@@ -38,9 +38,7 @@ public class KeypadScriptLevel3 : Interact
             Debug.Log("Red Key Count : " + keycard.KeyCardCount);
             if(canOpen && isInteractable)
             {
-                // isOpen = !isOpen;
-                // Debug.Log("Opening bool : " + isOpen);
-                // slidingDoor.OpenDoor();
+                
                 redMaterial.EnableKeyword ("_EMISSION");
             }
             if(keycard.KeyCardCount == 2)

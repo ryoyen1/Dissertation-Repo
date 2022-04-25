@@ -7,6 +7,7 @@ using TMPro;
 public class Level1TermInput2 : MonoBehaviour
 {
     FirstPerson firstPerson;
+    public string popUpText;
     public GameObject terminal;
     public GameObject floor;
     public TextAsset asset;
@@ -14,15 +15,17 @@ public class Level1TermInput2 : MonoBehaviour
     public InputField inputField;
     public string codeUI;
     public TMPro.TMP_Text lineNumbersUI;
-    public bool isFound = false;
+    public bool isFound;
     // public 
     void Start() {
         firstPerson = GameObject.Find("Player").GetComponent<FirstPerson>();
+        UIPopUp popUp = GameObject.FindGameObjectWithTag("Player").GetComponent<UIPopUp>();
         firstPerson.CanMove = false;
         terminal.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        // terminal.SetActive(false);
+        isFound = false;
+       
     }
     void Update() {
         SetLineNumbers();
@@ -31,9 +34,9 @@ public class Level1TermInput2 : MonoBehaviour
             RemoveSpace();
             DO();
             firstPerson.CanMove = true;
-            // GetCodeText();
-            // Debug.Log(codeUI);
             terminal.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else if (Input.GetKeyDown (KeyCode.R))
         {
@@ -51,27 +54,47 @@ public class Level1TermInput2 : MonoBehaviour
     }
     void DO()
     {
-            codeUI = code.GetComponent<Text>().text;
-            string textAsset = asset.text;
-            string[] textLines = textAsset.Split(',');
-            float z = 7.25f;
-            for (int i = 0; i < textLines.Length; i++ ) 
+        UIPopUp popUp = GameObject.FindGameObjectWithTag("Player").GetComponent<UIPopUp>();
+        codeUI = code.GetComponent<Text>().text;
+        string textAsset = asset.text;
+        string[] textLines = textAsset.Split(',');
+        float z = 7.25f;
+        for (int i = 0; i < textLines.Length; i++ ) 
+        {
+            Debug.Log(textLines[i]);
+            if(codeUI == textLines[i])
             {
-                Debug.Log(textLines[i]);
-                if(codeUI == textLines[i])
+                print("WORKSSS");
+                Debug.Log("congrats it works");
+                isFound = true;
+                for(int j = 0; j < i+1; j++)
                 {
-                    print("WORKSSS");
-                    Debug.Log("congrats it works");
-                    for(int j = 0; j < i+1; j++)
-                    {
-                        Debug.Log(i);
-                        Instantiate(floor,new Vector3(7.5f,16.5f,z), Quaternion.identity);
-                        z += 3f;
-                        Debug.Log("Z axis : " + z);
-                    }
+                    Debug.Log(i);
+                    Instantiate(floor,new Vector3(7.5f,16.5f,z), Quaternion.identity);
+                    z += 3f;
+                    Debug.Log("Z axis : " + z);
+                    popUp.ClosePopUp(popUpText);
                 }
+            break;
+            }if(codeUI != textLines[i])
+            {
+                isFound =false;
             }
-            Debug.Log("CodeUI : " + codeUI);
+        }
+        if(!isFound)
+        {
+            StartCoroutine(UITimeout());
+           
+        }
+    Debug.Log("CodeUI : " + codeUI);
+    }
+    private IEnumerator UITimeout()
+    {
+        UIPopUp popUp = GameObject.FindGameObjectWithTag("Player").GetComponent<UIPopUp>();
+        popUp.PopUp(popUpText);
+        yield return new WaitForSeconds(2);
+        popUp.ClosePopUp(popUpText);
+        
     }
 
     void SetLineNumbers () {

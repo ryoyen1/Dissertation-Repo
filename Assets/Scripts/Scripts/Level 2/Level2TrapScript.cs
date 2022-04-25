@@ -12,7 +12,7 @@ public class Level2TrapScript : Interact
     {
         level2Trap = GameObject.Find("TrapDoorLeft").GetComponent<Level2Trap>();
         level2SlideUp = GameObject.Find("UnderPlatform").GetComponent<Level2SlideUp>();
-        // level2TrapDoorTerminal = GameObject.Find("Terminal").GetComponent<Level2TrapDoorTerminal>();
+        
     }
 
     // Update is called once per frame
@@ -27,8 +27,7 @@ public class Level2TrapScript : Interact
     public override void OnInteract()
     {
         terminal.SetActive(true);
-        // level2Trap.OpenTrapDoorLeft();
-        // level2SlideUp.SlideUpPlatform();
+        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

@@ -22,7 +22,7 @@ public class Level2TermInput : MonoBehaviour
         terminal.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        // terminal.SetActive(false);
+       
     }
     void Update() {
         SetLineNumbers();
@@ -31,8 +31,7 @@ public class Level2TermInput : MonoBehaviour
             RemoveSpace();
             DO();
             firstPerson.CanMove = true;
-            // GetCodeText();
-            // Debug.Log(codeUI);
+            
             terminal.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -43,30 +42,23 @@ public class Level2TermInput : MonoBehaviour
         }
     }
 
-    // public void GetCodeText()
-    // {
-    //     codeUI = code.GetComponent<Text>().text;
-    //     inputField.onValueChanged.AddListener(delegate {RemoveSpace();});
-    //     // Debug.Log("INPUT FIELD : " + inputField);
-
-    // }
+    
     void Restart()
     {
 
     }
     void RemoveSpace()
     {
-        // inputField.text = inputField.text.Replace("", "");
-        // codeUI = codeUI.Replace("\n", "").Replace("\r","");
+       
         codeUI = codeUI.Replace("\n", "");
-        // asset.text = asset.text.Replace("\n\n","");
+       
         inputField.text = inputField.text.Replace("\n", "").Replace("\r","");
     }
     void DO()
     {
             codeUI = code.GetComponent<Text>().text;
             string textAsset = asset.text;
-            // string newtext = textAsset.Replace("\n","");
+            
             string[] textLines = textAsset.Split(',');
             string[] textLinesTest = {"whatsup", "hello"};
             float z = 8.4f;
@@ -85,14 +77,13 @@ public class Level2TermInput : MonoBehaviour
                         z += 3f;
                         Debug.Log("Z axis : " + z);
                     }
-                    // break;
+                    
                 }
 
             }
-            // Debug.Log("SOLUTION : " + textLines[2]);
-            // Debug.Log(codeUI + " == " + textLines[2]);
+    
             Debug.Log("CodeUI : " + codeUI);
-        // Debug.Log("Text : " + text);
+       
             for (int i = 0; i < textLinesTest.Length; i++ ) 
             {
                 if(codeUI == textLinesTest[i])

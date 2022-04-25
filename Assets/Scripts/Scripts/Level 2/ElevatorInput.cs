@@ -31,7 +31,7 @@ public class ElevatorInput : MonoBehaviour
         goingLevel2 = false;
         goingLevel3 = false;
         Debug.Log(goingLevel2);
-        // terminal.SetActive(false);
+        
     }
     void Update() {
         SetLineNumbers();
@@ -40,9 +40,7 @@ public class ElevatorInput : MonoBehaviour
             RemoveSpace();
             DO();
             firstPerson.CanMove = true;
-            // level2elevator.onTerminal = false;
-            // GetCodeText();
-            // Debug.Log(codeUI);
+            
             terminal.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -54,7 +52,7 @@ public class ElevatorInput : MonoBehaviour
     }
     void Restart()
     {
-        //Stuff happens
+        
     }
     void RemoveSpace()
     {
@@ -77,11 +75,9 @@ public class ElevatorInput : MonoBehaviour
                     print("GO TO LEVEL2 FROM 1");
                     Debug.Log("congrats it works");
                     goingLevel2 = true;
-                    // atLevel1 = false;
+                    
                     goingLevel3 =false;
-                    // animator.SetBool("atLevel2",goingLevel2);
-                    // elevatorScript.GotoLevel2();
-                    // break;
+                    
                 }
                 else if(codeUI == textLinesTest[2])
                 {
@@ -89,11 +85,9 @@ public class ElevatorInput : MonoBehaviour
                     Debug.Log("congrats it works");
                     goingLevel3 = true;
                     
-                    // atLevel1 = false;
+                    
                     goingLevel2 = false;
-                    // animator.SetBool("atLevel3",goingLevel3);
-                    // elevatorScript.GotoLevel2();
-                    // break;
+                    
                 }
                 else if(codeUI == textLinesTest[0] && goingLevel2)
                 {

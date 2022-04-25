@@ -17,7 +17,7 @@ public class ActivationPlate : MonoBehaviour
         if(other.gameObject.name == "ActivationCube")
         {
             //Do
-            // Destroy(other.gameObject);
+
             isActivated = true;
             redMaterial.EnableKeyword ("_EMISSION");
             myLight.enabled = !myLight.enabled;

@@ -15,15 +15,14 @@ public class KeyCard2 : Interact
     KeyCard keycard;
     void Start() {
         keycard = GameObject.Find("RedKey").GetComponent<KeyCard>();
-        // hasRedKey = false;
+      
     }
     public override void OnFocus() {
         UI.SetActive(true);
         print ("hello, looking at me");
     }
     public override void OnInteract() {
-        // keycard.hasRedKey = true;
-        // KPS.canOpen = true;
+        
         if (keycard.hasRedKey == true)
         {
             keycard.KeyCardCount += 1;
@@ -34,7 +33,7 @@ public class KeyCard2 : Interact
                 UI.SetActive(false);
             }
             Debug.Log(keycard.KeyCardCount);
-            // Debug.Log(hasRedKey);
+            
             //Shows a message Obtained
         }
     }
