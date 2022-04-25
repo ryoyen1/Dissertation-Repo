@@ -1,0 +1,1 @@
+if(greenlight && redlight && yellowlight){activate()},if(redlight && greenlight && yellowlight){activate()},if(yellowlight && greenlight && redlight){activate()},
